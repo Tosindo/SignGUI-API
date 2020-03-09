@@ -1,0 +1,8 @@
+name: SignGUI-API
+version: ${project.version}
+main: com.github.tosindo.signguiapi.SignGUIAPI
+api-version: 1.13
+prefix: SignGUI API
+depend: [ProtocolLib]
+authors: [Tosindo]
+description: A sign input GUI api for spigot.
