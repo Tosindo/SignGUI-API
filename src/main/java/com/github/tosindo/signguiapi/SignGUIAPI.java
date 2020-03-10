@@ -28,6 +28,6 @@ public final class SignGUIAPI extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        SignGUI.getInstance().destroy();
     }
 }
