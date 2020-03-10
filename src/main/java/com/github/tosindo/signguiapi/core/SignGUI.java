@@ -27,12 +27,12 @@ public class SignGUI {
     protected PacketAdapter packetAdapter;
 
     public enum SignType {
-        OAK(Material.OAK_SIGN),
-        DARK_OAK(Material.DARK_OAK_SIGN),
-        BIRCH(Material.BIRCH_WOOD),
-        JUNGLE(Material.JUNGLE_SIGN),
-        ACACIA(Material.ACACIA_SIGN),
-        SPRUCE(Material.SPRUCE_SIGN);
+        OAK(Material.OAK_WALL_SIGN),
+        DARK_OAK(Material.DARK_OAK_WALL_SIGN),
+        BIRCH(Material.BIRCH_WALL_SIGN),
+        JUNGLE(Material.JUNGLE_WALL_SIGN),
+        ACACIA(Material.ACACIA_WALL_SIGN),
+        SPRUCE(Material.SPRUCE_WALL_SIGN);
 
         private Material material;
 
@@ -122,11 +122,9 @@ public class SignGUI {
 
         try {
             for (PacketContainer packet : packets) {
-                Bukkit.getLogger().log(Level.INFO, packet.getType().toString());
                 protocolManager.sendServerPacket(player, packet);
             }
 
-            Bukkit.getLogger().log(Level.INFO, "Sign setup worked properly.");
             locations.put(player.getUniqueId(), signLocation.toLocation(player.getWorld()));
             listeners.put(player.getUniqueId(), listener);
 
